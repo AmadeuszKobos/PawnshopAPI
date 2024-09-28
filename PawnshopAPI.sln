@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PawnshopAPI", "PawnshopAPI\PawnshopAPI.csproj", "{70B164F9-C13F-490A-BE95-404D21CF9516}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PawnshopAPI", "PawnshopAPI\PawnshopAPI.csproj", "{70B164F9-C13F-490A-BE95-404D21CF9516}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{C6F91E2E-09FF-4C4A-A352-F03C3DA9B7F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "Entities\Entities.csproj", "{C6F91E2E-09FF-4C4A-A352-F03C3DA9B7F2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4C80B560-F68A-4D51-AAB2-865E9E9A972A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositories", "Repositories\Repositories.csproj", "{08C9E89E-476E-4775-90BE-F134374EC7BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositories", "Repositories\Repositories.csproj", "{08C9E89E-476E-4775-90BE-F134374EC7BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{1724F401-C44A-4160-93A3-82486C1390B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "Services\Services.csproj", "{1724F401-C44A-4160-93A3-82486C1390B8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
