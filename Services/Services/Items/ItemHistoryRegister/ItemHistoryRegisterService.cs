@@ -26,5 +26,10 @@ namespace Services
     {
       return Mapper.Map(_repo.GetAll().Where(x => x.PersonId == personId));
     }
+
+    public List<ItemHistoryRegisterVm> GetUserLastModificatedItemsHistory(int userId)
+    {
+      return Mapper.Map(_repo.GetAll().Where(x => x.UserId == userId).Distinct().Take(5));
+    }
   }
 }

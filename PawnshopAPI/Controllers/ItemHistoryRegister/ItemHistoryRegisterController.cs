@@ -63,5 +63,23 @@ namespace PawnshopAPI.Controllers.ItemHistoryRegister
         return BadRequest(ex.Message);
       }
     }
+
+    [HttpGet]
+    [Route("GetUserLastModificatedItemsHistory")]
+    public IActionResult GetUserLastModificatedItemsHistory()
+    {
+      try
+      {
+        var userClaimId = int.TryParse(User.FindFirst("Id")?.Value, out int userId);
+
+        var itemsModified = _service.GetUserLastModificatedItemsHistory(userId);
+
+        return Ok(itemsModified);
+      }
+      catch (Exception ex)
+      {
+        return BadRequest(ex.Message);
+      }
+    }
   }
 }

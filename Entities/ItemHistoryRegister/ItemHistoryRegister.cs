@@ -42,6 +42,9 @@ namespace Entities
     [Column("ItemName")]
     public string ItemName { get; set; } = string.Empty;
 
+    [Column("UserId")]
+    public int UserId { get; set; }
+
     [Column("Username")]
     public string Username { get; set; } = string.Empty;
   }
