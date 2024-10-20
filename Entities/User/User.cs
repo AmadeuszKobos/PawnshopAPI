@@ -34,6 +34,9 @@ namespace Entities
     [Column("RightId")]
     public int? RightId { get; set; }
 
+    [Column("Deleted")]
+    public bool Deleted { get; set; }
+
     [Column("Notes")]
     public string Notes { get; set; } = string.Empty;
   }

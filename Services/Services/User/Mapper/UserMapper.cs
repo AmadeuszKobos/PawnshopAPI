@@ -20,5 +20,22 @@ namespace Services
 
       return vm;
     }
+
+    public static User Map(UserVm vm)
+    {
+      var en = new User()
+      {
+        UserId = vm.UserId,
+        Username = vm.Username,
+        Password = vm.Password,
+        PreviousPassword = vm.PreviousPassword,
+        LastLogin = vm.LastLogin,
+        Blocked = vm.Blocked,
+        PersonId = vm.PersonId,
+        RightId = vm.RightId,
+      };
+
+      return en;
+    }
   }
 }

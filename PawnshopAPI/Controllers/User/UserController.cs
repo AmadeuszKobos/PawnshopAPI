@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Entities;
 using Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Azure.Identity;
 
 namespace PawnshopAPI.Controllers.User
 {
@@ -50,9 +51,30 @@ namespace PawnshopAPI.Controllers.User
       {
         var userClaimId = int.TryParse(User.FindFirst("Id")?.Value, out int userId);
 
-        var notes = _userService.GetUserNotes(userId);
+        var notes = _userService.GetUserNotes(userId) ?? string.Empty;  // Ensure notes are never null
+        return Ok(new { Notes = notes });
+      }
+      catch (Exception ex)
+      {
+        return BadRequest(ex.Message);
+      }
+    }
 
-        return Ok(notes);
+    [HttpPost]
+    [Route("AddUser")]
+    public IActionResult AddUser(UserVm user)
+    {
+      try
+      {
+        if (user == null)
+          throw new Exception("empty_model");
+
+        if (user.PersonId == 0 || user.PersonId == null)
+          throw new Exception("missing_person_id");
+
+        _userService.AddUser(user);
+
+        return Ok();
       }
       catch (Exception ex)
       {
@@ -62,13 +84,64 @@ namespace PawnshopAPI.Controllers.User
 
     [HttpPost]
     [Route("UpdateUserNotes")]
-    public IActionResult UpdateUserNotes(string notes)
+    public IActionResult UpdateUserNotes(StringTypeBody notes)
     {
       try
       {
         var userClaimId = int.TryParse(User.FindFirst("Id")?.Value, out int userId);
 
-        _userService.UpdateUserNotes(userId, notes);
+        _userService.UpdateUserNotes(userId, notes.Text);
+
+        return Ok();
+      }
+      catch (Exception ex)
+      {
+        return BadRequest(ex.Message);
+      }
+    }
+
+    [HttpPost]
+    [Route("UpdateUserPassword")]
+    public IActionResult UpdateUserPassword(UserPasswordVm userPass)
+    {
+      try
+      {
+        if (userPass == null)
+          throw new Exception("user_not_passed");
+
+        _userService.UpdateUserPassword(userPass);
+
+        return Ok();
+      }
+      catch (Exception ex)
+      {
+        return BadRequest(ex.Message);
+      }
+    }
+
+    [HttpPost]
+    [Route("UpdateUserBlockState")]
+    public IActionResult UpdateUserBlockState(int userId, bool currentBlockState)
+    {
+      try
+      {
+        _userService.UpdateUserBlockState(userId, currentBlockState);
+
+        return Ok();
+      }
+      catch (Exception ex)
+      {
+        return BadRequest(ex.Message);
+      }
+    }
+
+    [HttpPost]
+    [Route("DeleteUser")]
+    public IActionResult DeleteUser(int userId)
+    {
+      try
+      {
+        _userService.DeleteUser(userId);
 
         return Ok();
       }
