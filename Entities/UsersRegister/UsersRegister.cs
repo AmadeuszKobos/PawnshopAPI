@@ -26,5 +26,8 @@ namespace Entities
 
     [Column("Blocked")]
     public bool Blocked { get; set; }
+
+    [Column("LastLogin")]
+    public DateTime LastLogin { get; set; }
   }
 }

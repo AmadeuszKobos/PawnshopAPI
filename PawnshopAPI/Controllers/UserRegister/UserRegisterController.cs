@@ -27,9 +27,9 @@ namespace PawnshopAPI
 
         if (userId == 1)
         {
-          var notes = _userRegisterService.GetUsersRegister();
+          var users = _userRegisterService.GetUsersRegister();
 
-          return Ok(new { Notes = notes });
+          return Ok(users);
         }
         else
         {

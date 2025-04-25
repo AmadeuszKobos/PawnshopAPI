@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Repositories.ENUM
+﻿namespace Repositories.ENUM
 {
-  public enum OperationTypeEnum // Operation types equals item status types
+  public enum OperationTypeEnum
   {
     All = 0,
     Purchase = 1,

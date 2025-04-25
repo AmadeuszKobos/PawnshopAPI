@@ -1,12 +1,6 @@
 ﻿using Entities;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Repositories;
 using Repositories.ENUM;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Transactions;
 
 namespace Services
@@ -36,7 +30,7 @@ namespace Services
     {
       var itemLastOwnerId = _itemHistoryRepo.OrderByDescending(x => x.OperationDate).FirstOrDefault(x => x.ItemId == itemId && (x.OperationTypeId == (int)OperationTypeEnum.Pawn || x.OperationTypeId == (int)OperationTypeEnum.Purchase))?.PersonId;
 
-      if(itemLastOwnerId != null)
+      if (itemLastOwnerId != null)
       {
         return Mapper.Map(_repo.FirstOrDefault(x => x.PersonId == itemLastOwnerId));
       }
@@ -44,7 +38,6 @@ namespace Services
       {
         throw new Exception("Nie odnaleziono ostatniego właściciela");
       }
-
     }
 
     public List<PersonForSearchVm> GetPersonsForSearch(string searchValue)
@@ -101,7 +94,5 @@ namespace Services
         tran.Complete();
       }
     }
-
-
   }
 }

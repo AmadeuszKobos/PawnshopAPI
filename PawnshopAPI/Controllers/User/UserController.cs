@@ -121,11 +121,11 @@ namespace PawnshopAPI.Controllers.User
 
     [HttpPost]
     [Route("UpdateUserBlockState")]
-    public IActionResult UpdateUserBlockState(int userId, bool currentBlockState)
+    public IActionResult UpdateUserBlockState([FromBody] UpdateUserBlockStateVm updUserBlockState)
     {
       try
       {
-        _userService.UpdateUserBlockState(userId, currentBlockState);
+        _userService.UpdateUserBlockState(updUserBlockState.UserId, updUserBlockState.CurrentBlockState);
 
         return Ok();
       }

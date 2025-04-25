@@ -14,10 +14,11 @@ namespace Services
       var list = entities.Select(e => new UserRegisterVm
       {
         UserId = e.UserId,
-        Username = e.Name,
+        Username = e.Username,
         Name = e.Name,
         PhoneNumber = e.PhoneNumber,
         Blocked = e.Blocked,
+        LastLogin = e.LastLogin,
       }).ToList();
 
       return list;

@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Services.InformationService">
+    <Position X="3" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAQAAAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\Information\InformationService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Left" Position="0.6" />
+  </Class>
+  <Class Name="Services.ItemService">
+    <Position X="11.25" Y="0.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAFAAAAAAEAAAAAAQAQAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Services\Items\Item\ItemService.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_itemHistoryService" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Services.PersonService">
+    <Position X="3.25" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AIAAIAAAAAAAAAAAAAAgQAAIAAAAIQAAAAQAAAAAAAA=</HashCode>
+      <FileName>Services\Person\PersonService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Services.PersonRegisterService">
+    <Position X="9" Y="4.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Services\PersonRegister\PersonRegisterService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Services.Services.SummaryService">
+    <Position X="21.5" Y="5.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\Summary\SummaryService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Services.UserService">
+    <Position X="14.25" Y="6" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAhAQCAAIAEAAAAAAAAAAAAAAAgAAAAAAIAAAA=</HashCode>
+      <FileName>Services\User\UserService.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_userRepository" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Services.UserRegisterService">
+    <Position X="6.75" Y="3" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\UserRegister\UserRegisterService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Services.ItemHistoryService">
+    <Position X="17.75" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAAACAQAAAAAAAACAAAAAAAAAAAgA=</HashCode>
+      <FileName>Services\Items\ItemHistory\ItemHistoryService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="Services.IInformationService">
+    <Position X="0.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\Information\IInformationService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Services.IItemService">
+    <Position X="8" Y="0.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAFAAAAAAEAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\Items\Item\IItemService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Services.IPersonService">
+    <Position X="0.5" Y="3.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgAAAIAAAAIQAAAAQAAAAAAAA=</HashCode>
+      <FileName>Services\Person\IPersonService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Services.IPersonRegisterService">
+    <Position X="8.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Services\PersonRegister\IPersonRegisterService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Services.Services.ISummaryService">
+    <Position X="18.25" Y="4" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\Summary\ISummaryService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Services.IUserService">
+    <Position X="17" Y="6.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAQCAAIAEAAAAAAAAAAAAAAAgAAAAAAIAAAA=</HashCode>
+      <FileName>Services\User\IUserService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Services.IUserRegisterService">
+    <Position X="6.5" Y="5.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\UserRegister\IUserRegisterService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Services.IItemHistoryService">
+    <Position X="15.25" Y="1" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAAACAAAAAAAAAACAAAAAAAAAAAgA=</HashCode>
+      <FileName>Services\Items\ItemHistory\IItemHistoryService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Repositories.IUserRepository">
+    <Position X="13.75" Y="4" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Repositories.IBaseRepository&lt;T&gt;">
+    <Position X="11.25" Y="8.5" Width="2.25" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -24,7 +24,7 @@ namespace Services
       var user = _userRepository.FirstOrDefault(x => x.Username == login.Username);
 
       if (user == null)
-        throw new Exception("user_not_found");
+        throw new Exception("Nie znaleziono użytkownika");
 
       var userVm = Mapper.Map(user);
 
@@ -38,7 +38,7 @@ namespace Services
       }
       else
       {
-        throw new Exception("incorrect_password");
+        throw new Exception("Błędne hasło lub login");
       }
     }
 

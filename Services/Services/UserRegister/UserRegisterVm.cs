@@ -18,5 +18,7 @@ namespace Services
     public string PhoneNumber { get; set; }
 
     public bool Blocked { get; set; }
+
+    public DateTime LastLogin { get; set; }
   }
 }
