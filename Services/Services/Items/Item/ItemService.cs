@@ -13,13 +13,12 @@ namespace Services
   public class ItemService : IItemService
   {
     private readonly IItemRepository _repo;
-    private readonly IItemHistoryRepository _itemHistoryRepo;
     private readonly IItemHistoryService _itemHistoryService;
 
     public ItemService(IItemRepository repo, IItemHistoryService itemHistoryService, IItemHistoryRepository itemHistoryRepo)
     {
       _repo = repo;
-      _itemHistoryRepo = itemHistoryRepo;
+      _itemHistoryService = itemHistoryService;
       _itemHistoryService = itemHistoryService;
     }
 
@@ -51,6 +50,11 @@ namespace Services
         _repo.AddOrUpdate(item.Id, item);
 
         var itemHistory = Mapper.Map(itemVm.History, item.Id);
+
+        itemHistory.UserId = 1;
+
+        if (itemHistory.PersonId == 0)
+          itemHistory.PersonId = _itemHistoryService.GetItemHistory(itemHistory.Id).FirstOrDefault().Id;
 
         _itemHistoryService.AddItemHistory(itemHistory);
 
@@ -95,16 +99,18 @@ namespace Services
         Timeout = TransactionManager.DefaultTimeout
       };
 
+      var itemHistory = Mapper.Map(itemId);
+
       using (var tran = new TransactionScope(TransactionScopeOption.Required, options))
       {
         _repo.UpdateSingleColumn<bool?>(x => x.Id == itemId, x => x.Deleted, true);
 
-        var itemHistory = Mapper.Map(itemId);
-
-        _itemHistoryService.AddItemHistory(itemHistory);
-
         tran.Complete();
       }
+
+      itemHistory.UserId = 1;
+
+      _itemHistoryService.AddItemHistory(itemHistory);
     }
   }
 }

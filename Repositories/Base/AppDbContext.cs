@@ -1,10 +1,6 @@
 ﻿using Entities;
+using Entities.Summary;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Repositories
 {
@@ -23,8 +19,16 @@ namespace Repositories
     public DbSet<Address> Addresses { get; set; }
     public DbSet<ItemHistoryRegister> ItemHistoryRegisters { get; set; }
     public DbSet<Information> Informations { get; set; }
+    public DbSet<Summary> Summaries { get; set; }
+    public DbSet<UsersRegister> UsersRegisters { get; set; }
 
-    protected override void OnModelCreating(ModelBuilder modelBuilder) =>
-        modelBuilder.ApplyConfigurationsFromAssembly(typeof(AppDbContext).Assembly);
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+      base.OnModelCreating(modelBuilder);
+
+      modelBuilder.Entity<Summary>().HasNoKey();
+
+      modelBuilder.ApplyConfigurationsFromAssembly(typeof(AppDbContext).Assembly);
+    }
   }
 }

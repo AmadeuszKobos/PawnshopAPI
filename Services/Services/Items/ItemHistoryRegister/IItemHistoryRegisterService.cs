@@ -12,5 +12,7 @@ namespace Services
     public List<ItemHistoryRegisterVm> GetItemHistoryRegister(int itemId);
 
     public List<ItemHistoryRegisterVm> GetPersonItemHistoryRegister(int personId);
+
+    public List<ItemHistoryRegisterVm> GetUserLastModificatedItemsHistory(int userId);
   }
 }

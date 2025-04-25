@@ -1,6 +1,8 @@
 ﻿using Repositories;
+using Repositories.Repos;
 using Repositoriess;
 using Services;
+using Services.Services;
 
 namespace HomeAPI.DI
 {
@@ -23,6 +25,9 @@ namespace HomeAPI.DI
       services.AddScoped<IUserRepository, UserRepository>();
       services.AddScoped<IUserService, UserService>();
 
+      services.AddScoped<IUserRegisterRepository, UserRegisterRepository>();
+      services.AddScoped<IUserRegisterService, UserRegisterService>();
+
       services.AddScoped<IItemRepository, ItemRepository>();
       services.AddScoped<IItemService, ItemService>();
 
@@ -40,6 +45,9 @@ namespace HomeAPI.DI
 
       services.AddScoped<IInformationRepository, InformationRepository>();
       services.AddScoped<IInformationService, InformationService>();
+
+      services.AddScoped<ISummaryRepository, SummaryRepository>();
+      services.AddScoped<ISummaryService, SummaryService>();
     }
   }
 }

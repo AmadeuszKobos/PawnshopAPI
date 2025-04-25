@@ -12,6 +12,10 @@ namespace Services
   {
     UserVm GetUserByLogin(LoginVm login);
     string GetUserNotes(int userId);
+    void AddUser(UserVm user);
     void UpdateUserNotes(int userId, string notes);
+    void UpdateUserPassword(UserPasswordVm userPass);
+    void UpdateUserBlockState(int userId, bool currentBlockState);
+    void DeleteUser(int userId);
   }
 }
